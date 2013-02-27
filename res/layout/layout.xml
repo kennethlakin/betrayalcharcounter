@@ -1,145 +1,136 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/RelativeLayout1"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
-    
-    <HorizontalScrollView
-        android:id="@+id/nameList1"
+    <Spinner
+        android:id="@+id/nameSpinner"
         android:layout_width="wrap_content"
-        android:layout_height="50dp"
+        android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
-        android:layout_marginBottom="0dp"
-        android:layout_marginRight="0dp" >
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:orientation="horizontal"
-            android:layout_marginBottom="0dp"
-        	android:layout_marginRight="0dp"
-         >
-        <Button
-            android:id="@+id/Button02"
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="0dp"
-            android:layout_marginRight="0dp"
-            android:text="b" />
-        <Button
-            android:id="@+id/Button03"
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="0dp"
-            android:layout_marginRight="0dp"
-            android:text="u" />
-        <Button
-            android:id="@+id/Button04"
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="0dp"
-            android:layout_marginRight="0dp"
-            android:text="Hannah" />
-        </LinearLayout>
-    </HorizontalScrollView>
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="0dp"
+        android:layout_marginTop="0dp" />
 
     <RadioGroup
         android:id="@+id/speedGroup"
         android:layout_width="52dp"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/seekBar2"
-        android:layout_alignParentLeft="true" >
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_margin="0dp" >
 
         <RadioButton
             android:id="@+id/speed8"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content" 
+        	android:layout_margin="0dp" />
 
         <RadioButton
             android:id="@+id/speed7"
+            android:clickable="false"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_margin="0dp" />
 
         <RadioButton
             android:id="@+id/speed6"
+            android:clickable="false"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_margin="0dp"  />
 
         <RadioButton
             android:id="@+id/speed5"
+            android:clickable="false"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_margin="0dp"  />
 
         <RadioButton
             android:id="@+id/speed4"
+            android:clickable="false"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_margin="0dp"  />
 
         <RadioButton
             android:id="@+id/speed3"
+            android:clickable="false"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_margin="0dp"  />
 
         <RadioButton
             android:id="@+id/speed2"
+            android:clickable="false"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_margin="0dp"  />
 
         <RadioButton
             android:id="@+id/speed1"
+            android:clickable="false"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_margin="0dp"  />
     </RadioGroup>
 
     <RadioGroup
         android:id="@+id/mightGroup"
         android:layout_width="52dp"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/seekBar2"
+        android:layout_alignParentBottom="true"
         android:layout_toRightOf="@+id/speedGroup" >
 
         <RadioButton
             android:id="@+id/might8"
+            android:clickable="false"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
         <RadioButton
             android:id="@+id/might7"
+            android:clickable="false"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
         <RadioButton
             android:id="@+id/might6"
+            android:clickable="false"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
         <RadioButton
             android:id="@+id/might5"
+            android:clickable="false"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
         <RadioButton
             android:id="@+id/might4"
+            android:clickable="false"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
         <RadioButton
             android:id="@+id/might3"
+            android:clickable="false"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
         <RadioButton
             android:id="@+id/might2"
+            android:clickable="false"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
         <RadioButton
             android:id="@+id/might1"
+            android:clickable="false"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
     </RadioGroup>
@@ -148,46 +139,54 @@
         android:id="@+id/sanityGroup"
         android:layout_width="52dp"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/seekBar2"
+        android:layout_alignParentBottom="true"
         android:layout_toRightOf="@+id/mightGroup" >
 
         <RadioButton
             android:id="@+id/sanity8"
+            android:clickable="false"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
         <RadioButton
             android:id="@+id/sanity7"
+            android:clickable="false"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
         <RadioButton
             android:id="@+id/sanity6"
+            android:clickable="false"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
         <RadioButton
             android:id="@+id/sanity5"
+            android:clickable="false"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
         <RadioButton
             android:id="@+id/sanity4"
+            android:clickable="false"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
         <RadioButton
             android:id="@+id/sanity3"
+            android:clickable="false"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
         <RadioButton
             android:id="@+id/sanity2"
+            android:clickable="false"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
         <RadioButton
             android:id="@+id/sanity1"
+            android:clickable="false"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
     </RadioGroup>
@@ -196,56 +195,57 @@
         android:id="@+id/knowledgeGroup"
         android:layout_width="52dp"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/seekBar2"
+        android:layout_alignParentBottom="true"
         android:layout_toRightOf="@+id/sanityGroup" >
 
         <RadioButton
             android:id="@+id/knowledge8"
+            android:clickable="false"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
         <RadioButton
             android:id="@+id/knowledge7"
+            android:clickable="false"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
         <RadioButton
             android:id="@+id/knowledge6"
+            android:clickable="false"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
         <RadioButton
             android:id="@+id/knowledge5"
+            android:clickable="false"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
         <RadioButton
             android:id="@+id/knowledge4"
+            android:clickable="false"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
         <RadioButton
             android:id="@+id/knowledge3"
+            android:clickable="false"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
         <RadioButton
             android:id="@+id/knowledge2"
+            android:clickable="false"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
         <RadioButton
             android:id="@+id/knowledge1"
+            android:clickable="false"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
     </RadioGroup>
-
-    <SeekBar
-        android:id="@+id/seekBar2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true" />
 
     <LinearLayout
         android:id="@+id/speedPlusMinus"
@@ -254,28 +254,25 @@
         android:layout_above="@+id/speedGroup"
         android:layout_alignEnd="@+id/speedGroup"
         android:layout_alignStart="@+id/speedGroup"
-        android:layout_below="@+id/nameList1"
-        android:background="#000000"
         android:orientation="vertical"
         android:visibility="visible" >
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/speedPlus"
             style="?android:attr/buttonStyleSmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="0dp"
-            android:layout_marginRight="0dp"
-            android:text="+" />
+			android:layout_margin="0dp" 
+            android:text="+"
+            tools:ignore="HardcodedText" />
 
         <Button
-            android:id="@+id/button1"
+            android:id="@+id/speedMinus"
             style="?android:attr/buttonStyleSmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="0dp"
-            android:layout_marginRight="0dp"
-            android:text="-" />
+            android:layout_margin="0dp" 
+            android:text="-" tools:ignore="HardcodedText"/>
     </LinearLayout>
 
     <LinearLayout
@@ -285,27 +282,27 @@
         android:layout_above="@+id/mightGroup"
         android:layout_alignEnd="@+id/mightGroup"
         android:layout_alignStart="@+id/mightGroup"
-        android:layout_below="@+id/nameList1"
         android:layout_toRightOf="@+id/speedPlusMinus"
         android:orientation="vertical" >
-        
-        <Button
-            android:id="@+id/button2"
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="0dp"
-            android:layout_marginRight="0dp"
-            android:text="+" />
 
         <Button
-            android:id="@+id/Button01"
+            android:id="@+id/mightPlus"
             style="?android:attr/buttonStyleSmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="0dp"
-            android:layout_marginRight="0dp"
-            android:text="-" />
+            android:layout_margin="0dp" 
+            android:text="+"
+            tools:ignore="HardcodedText" />
+
+        <Button
+            android:id="@+id/mightMinus"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="0dp" 
+            android:text="-"
+            tools:ignore="HardcodedText" />
+
     </LinearLayout>
 
     <LinearLayout
@@ -315,27 +312,27 @@
         android:layout_above="@+id/sanityGroup"
         android:layout_alignEnd="@+id/sanityGroup"
         android:layout_alignStart="@+id/sanityGroup"
-        android:layout_below="@+id/nameList1"
         android:layout_toRightOf="@+id/mightPlusMinus"
         android:orientation="vertical" >
-        
-        <Button
-            android:id="@+id/button2"
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="0dp"
-            android:layout_marginRight="0dp"
-            android:text="+" />
 
         <Button
-            android:id="@+id/Button02"
+            android:id="@+id/sanityPlus"
             style="?android:attr/buttonStyleSmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="0dp"
-            android:layout_marginRight="0dp"
-            android:text="-" />
+            android:layout_margin="0dp" 
+            android:text="+"
+            tools:ignore="HardcodedText" />
+
+        <Button
+            android:id="@+id/sanityMinus"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="0dp" 
+            android:text="-"
+            tools:ignore="HardcodedText" />
+
     </LinearLayout>
 
     <LinearLayout
@@ -345,29 +342,36 @@
         android:layout_above="@+id/knowledgeGroup"
         android:layout_alignEnd="@+id/knowledgeGroup"
         android:layout_alignStart="@+id/knowledgeGroup"
-        android:layout_below="@+id/nameList1"
         android:layout_toRightOf="@+id/sanityPlusMinus"
         android:orientation="vertical" >
-        
-        <Button
-            android:id="@+id/button2"
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="0dp"
-            android:layout_marginRight="0dp"
-            android:text="+" />
 
         <Button
-            android:id="@+id/Button03"
+            android:id="@+id/knowledgePlus"
             style="?android:attr/buttonStyleSmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="0dp"
-            android:layout_marginRight="0dp"
-            android:text="-" />
+            android:layout_margin="0dp" 
+            android:text="+"
+            tools:ignore="HardcodedText" />
+
+        <Button
+            android:id="@+id/knowledgeMinus"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="0dp" 
+            android:text="-"
+            tools:ignore="HardcodedText" />
+
     </LinearLayout>
 
-    
+    <Button
+        android:id="@+id/resetAttrs"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:text="Reset" />
 
 </RelativeLayout>

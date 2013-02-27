@@ -3,16 +3,22 @@ package biz.lakin.android.apps.betrayal;
 import java.util.HashMap;
 
 import android.app.Activity;
+import android.app.backup.RestoreObserver;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.GridView;
+import android.widget.Button;
 import android.widget.HorizontalScrollView;
-import android.widget.ListAdapter;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Spinner;
+import android.widget.AdapterView.OnItemSelectedListener;
 
-public class BetrayalCharSheetActivity extends Activity {
+public class BetrayalCharSheetActivity extends Activity 
+  implements OnItemSelectedListener, OnClickListener {
 	
 	private class Character {
 		public String name;
@@ -28,7 +34,8 @@ public class BetrayalCharSheetActivity extends Activity {
 
 	private HashMap<String, Character> m_characterStats = new HashMap<String, Character>();
 	private HashMap<String, RadioGroup> m_statButtonGroups = new HashMap<String, RadioGroup>();
-	private HorizontalScrollView m_nameGrid;
+	private Button m_resetAttrs;
+	private Spinner m_nameSpinner;
 	
 	public BetrayalCharSheetActivity() {
 		createCharacters();
@@ -36,23 +43,19 @@ public class BetrayalCharSheetActivity extends Activity {
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
-		/*
-		 * Layout:
-		 * | Scrollable list of char names
-		 * | Hobbies, DOB
-		 * | speed, might, san, knowl +/- buttons, vertical 
-		 * | speed, might, san, knowl radio button columns to indicate 
-		 * |   current value and ticks till top or bottom.
-		 * |
-		 * 
-		 */
 		super.onCreate(savedInstanceState);
 		this.setContentView(R.layout.layout);
-		
-		m_nameGrid = (HorizontalScrollView)findViewById(R.id.nameList1);
+
 		ArrayAdapter<String> aa = 
 				new ArrayAdapter<String>(getWindow().getContext(),
-		android.R.layout.simple_list_item_1, this.names);
+		android.R.layout.simple_spinner_item, this.names);
+		aa.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+		m_nameSpinner = (Spinner)findViewById(R.id.nameSpinner);
+		m_nameSpinner.setAdapter(aa);
+		m_nameSpinner.setOnItemSelectedListener(this);
+		
+		m_resetAttrs = (Button)findViewById(R.id.resetAttrs);
+		m_resetAttrs.setOnClickListener(this);
 		
 
 		RadioGroup tmp = (RadioGroup)findViewById(R.id.speedGroup);
@@ -63,7 +66,26 @@ public class BetrayalCharSheetActivity extends Activity {
 		m_statButtonGroups.put(statNames[2], tmp);
 		tmp = (RadioGroup)findViewById(R.id.knowledgeGroup);
 		m_statButtonGroups.put(statNames[3], tmp);
-		loadInitialStateForCharacter(names[1]);
+	}
+	
+	@Override
+	public void onItemSelected(AdapterView<?> parent, View view, 
+            int pos, long id) {
+		Object obj = parent.getItemAtPosition(pos);
+		if(obj != null) {
+			loadInitialStateForCharacter(obj.toString());
+		}
+    }
+	
+	@Override
+	public void onNothingSelected(AdapterView<?> arg0){	}
+	
+	@Override
+	public void onClick(View v) {
+		if(v == m_resetAttrs) {
+			final String name = m_nameSpinner.getSelectedItem().toString();
+			loadInitialStateForCharacter(name);
+		}
 	}
 
 	@Override
@@ -288,5 +310,4 @@ public class BetrayalCharSheetActivity extends Activity {
 				{2,3,4,4,5,6,6,6}
 			}
 	};
-
 }
